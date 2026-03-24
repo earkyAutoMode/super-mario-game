@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Mini Game</title>
+    <style>
+        body {
+            margin: 0;
+            background: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: 'Press Start 2P', cursive, sans-serif;
+            overflow: hidden;
+        }
+        #container {
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+        canvas {
+            background: #5c94fc;
+            display: block;
+            image-rendering: pixelated;
+        }
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            text-shadow: 2px 2px #000;
+        }
+        #msg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            text-align: center;
+            display: none;
+        }
+        .controls {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+    <!-- Use a pixel-style font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="ui">
+            <div>MARIO<br><span id="score">000000</span></div>
+            <div>WORLD<br>1-1</div>
+            <div>TIME<br><span id="timer">400</span></div>
+        </div>
+        <canvas id="gameCanvas" width="640" height="480"></canvas>
+        <div id="msg">
+            <h1 id="status">GAME OVER</h1>
+            <p>Press R to Restart</p>
+        </div>
+    </div>
+    <div class="controls">Arrows/WASD to Move & Jump</div>
+    <script src="js/game.js"></script>
+</body>
+</html>
